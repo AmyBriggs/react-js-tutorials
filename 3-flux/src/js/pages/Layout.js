@@ -8,11 +8,18 @@ export default class Layout extends React.Component {
   render() {
     const { location } = this.props;
     const containerStyle = {
-      marginTop: "60px"
+      marginTop: "60px",
+    };
+
+    const bodyStyle = {
+      backgroundColor: "rgb(243, 250, 216)",
+      height: "700px",
+      width: "auto"
     };
 
     return (
-      <div>
+
+      <div class="body" style={bodyStyle}>
 
         <Nav location={location} />
 

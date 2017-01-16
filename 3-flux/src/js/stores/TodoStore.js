@@ -13,32 +13,36 @@ class TodoStore extends EventEmitter {
       },
       {
         id: 235684679,
-        text: "Pay Water Bill",
+        text: "Pay Kitty Bill",
         complete: false
       },
     ];
   }
 
+
+
   createTodo(text) {
     const id = Date.now();
-
     this.todos.push({
       id,
       text,
       complete: false,
     });
-
     this.emit("change");
   }
+
+
 
   getAll() {
     return this.todos;
   }
 
+
   handleActions(action) {
+    console.log("TodoStore received an action", action);
     switch(action.type) {
       case "CREATE_TODO": {
-        this.createTodo(action.text);
+        this.createTodo(action.newTodo.text);
         break;
       }
       case "RECEIVE_TODOS": {
@@ -52,6 +56,7 @@ class TodoStore extends EventEmitter {
 }
 
 const todoStore = new TodoStore;
+window.dispatcher = dispatcher
 dispatcher.register(todoStore.handleActions.bind(todoStore));
 
 export default todoStore;

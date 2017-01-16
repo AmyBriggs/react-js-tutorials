@@ -8,6 +8,10 @@ export default class Archives extends React.Component {
     const { params } = this.props;
     const { article } = params;
     const { date, filter } = query;
+    // const { query } = this.props.location;
+    // const { params } = this.props;
+    // const { article } = params;
+    // const { date, filter } = query;
 
     const Articles = [
       "Some Article",
@@ -22,10 +26,12 @@ export default class Archives extends React.Component {
 
     return (
       <div>
-        <h1>Archives</h1>
-        article: {article}, date: {date}, filter: {filter}
-        <div class="row">{Articles}</div>
+        <h1>Archives ({article})</h1>
+        <h4>date: {date}, filter: {filter}</h4>
       </div>
+    //     article: {article}, date: {date}, filter: {filter}
+    //     <div class="row">{Articles}</div>
+    //   </div>
     );
   }
 }

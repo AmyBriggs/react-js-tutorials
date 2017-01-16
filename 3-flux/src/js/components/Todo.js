@@ -7,8 +7,13 @@ export default class Todo extends React.Component {
 
   render() {
     const { complete, edit, text } = this.props;
+    const liStyle= {
+      fontSize: "18px",
+      color: "rgb(12, 136, 205)"
+    }
 
     const icon = complete ? "\u2714" : "\u2716"
+
 
     if (edit) {
       return (
@@ -19,9 +24,10 @@ export default class Todo extends React.Component {
     }
 
     return (
-      <li>
-        <span>{text}</span>
-        <span>{icon}</span>
+
+      <li style={liStyle}>
+        <span>{text} </span>
+        <span>  {icon}</span>
       </li>
     );
   }

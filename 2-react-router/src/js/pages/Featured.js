@@ -4,6 +4,8 @@ import Article from "../components/Article";
 
 export default class Featured extends React.Component {
   render() {
+
+
     const Articles = [
       "Some Article",
       "Some Other Article",
@@ -18,6 +20,7 @@ export default class Featured extends React.Component {
       "Yet Another Article",
       "Still More",
     ].map((title, i) => <Article key={i} title={title}/> );
+
 
     const adText = [
       "Ad spot #1",
